@@ -24,12 +24,12 @@ namespace RuppinZombiesDatabase.Controllers
         }
 
         // POST api/<UsersController>
-        [HttpPost]
-        public IActionResult Post([FromBody] Models.User UserToInsert)
+        [HttpPost("InsertUser/UserID/{UserID}")]
+        public IActionResult Post(string UserID)
         {
             try
             {
-                return Ok(UserToInsert.Insert());
+                return Ok(Models.User.Insert(UserID));
             }
             catch (Exception ex)
             {

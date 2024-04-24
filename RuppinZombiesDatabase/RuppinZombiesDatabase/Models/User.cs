@@ -9,10 +9,11 @@ namespace RuppinZombiesDatabase.Models
 
         public string UserID { get => userID; set => userID = value; }
         public int Xp { get => xp; set => xp = value; }
-        public object Insert()
+        public static object Insert(string UserID)
         {
             DBservices db = new DBservices();
-            return db.InsertUser(this);
+            object res = db.InsertUser(UserID);
+            return new { UserID = UserID, XP = res };
         }
         public static bool InsertUserAnswer(string userID, int questionID, int userAnswer)
         {

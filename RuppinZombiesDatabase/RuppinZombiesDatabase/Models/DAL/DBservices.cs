@@ -83,6 +83,7 @@ namespace RuppinZombiesDatabase.Models.DAL
                     Question q = new Question();
                     q.Id = Convert.ToInt32(dataReader["QuestionID"]);
                     q.Content = dataReader["content"].ToString();
+                    q.Answers = new List<string>();
                     q.Answers.Add(dataReader["answer1"].ToString());
                     q.Answers.Add(dataReader["answer2"].ToString());
                     q.Answers.Add(dataReader["answer3"].ToString());
@@ -141,8 +142,8 @@ namespace RuppinZombiesDatabase.Models.DAL
                 while (dataReader.Read())
                 {
                     Subject s = new Subject();
-                    s.SubjectID = Convert.ToInt32(dataReader["QuestionID"]);
-                    s.SubjectName = dataReader["content"].ToString();
+                    s.SubjectID = Convert.ToInt32(dataReader["SubjectID"]);
+                    s.SubjectName = dataReader["subjectName"].ToString();
   
                     subject.Add(s);
                 }
@@ -242,7 +243,7 @@ namespace RuppinZombiesDatabase.Models.DAL
                 paramDic.Add("@correctAnswer", q.CorrectAnswer);
                 paramDic.Add("@SubjectID", q.SubjectID);
 
-                cmd = CreateCommandWithStoredProcedure("SP_RegisterUser", con, paramDic);  // create the command
+                cmd = CreateCommandWithStoredProcedure("SP_InsertQuestion", con, paramDic);  // create the command
 
                 SqlParameter outputParam = new SqlParameter("@QuestionID", SqlDbType.Int);
                 outputParam.Direction = ParameterDirection.Output;
@@ -274,7 +275,7 @@ namespace RuppinZombiesDatabase.Models.DAL
         //--------------------------------------------------------------------------------------------------
         // This method Inserts a user to the database and if exists it returns the same user
         //--------------------------------------------------------------------------------------------------
-        public object InsertUser(User u)
+        public object InsertUser(string UserID)
         {
             SqlConnection con = null;
             SqlCommand cmd = null;
@@ -286,9 +287,9 @@ namespace RuppinZombiesDatabase.Models.DAL
 
                 Dictionary<string, object> paramDic = new Dictionary<string, object>();
 
-                paramDic.Add("@UserID", u.UserID);
+                paramDic.Add("@UserID", UserID);
 
-                cmd = CreateCommandWithStoredProcedure("SP_RegisterUser", con, paramDic);  // create the command
+                cmd = CreateCommandWithStoredProcedure("SP_InsertUser", con, paramDic);  // create the command
 
                 object result = cmd.ExecuteScalar(); // execute the command and get the result
 
@@ -326,7 +327,7 @@ namespace RuppinZombiesDatabase.Models.DAL
                 paramDic.Add("@QuestionID", questionID);
                 paramDic.Add("@UserAnswer", userAnswer);
 
-                cmd = CreateCommandWithStoredProcedure("SP_RegisterUser", con, paramDic);  // create the command
+                cmd = CreateCommandWithStoredProcedure("SP_InsertUserAnswer", con, paramDic);  // create the command
 
                 int numEffected = cmd.ExecuteNonQuery(); // execute the command
                 //int numEffected = Convert.ToInt32(cmd.ExecuteScalar());

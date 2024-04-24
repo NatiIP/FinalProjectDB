@@ -18,7 +18,7 @@ namespace RuppinZombiesDatabase.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = "Server Error" + ex.Message });
+                return BadRequest(new { message = "Server Error " + ex.Message });
             }
         }
 

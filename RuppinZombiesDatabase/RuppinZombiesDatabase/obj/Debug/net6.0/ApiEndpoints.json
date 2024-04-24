@@ -229,22 +229,6 @@
   },
   {
     "ContainingType": "RuppinZombiesDatabase.Controllers.UsersController",
-    "Method": "Post",
-    "RelativePath": "api/Users",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "UserToInsert",
-        "Type": "RuppinZombiesDatabase.Models.User",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "RuppinZombiesDatabase.Controllers.UsersController",
     "Method": "Get",
     "RelativePath": "api/Users/{id}",
     "HttpMethod": "GET",
@@ -317,6 +301,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "RuppinZombiesDatabase.Controllers.UsersController",
+    "Method": "Post",
+    "RelativePath": "api/Users/InsertUser/UserID/{UserID}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "RuppinZombiesDatabase.Controllers.UsersController",
