@@ -10,9 +10,16 @@ namespace RuppinZombiesDatabase.Controllers
     {
         // GET: api/<SubjectsController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(Models.Subject.GetAllSubjects());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error" + ex.Message });
+            }
         }
 
         // GET api/<SubjectsController>/5

@@ -10,9 +10,16 @@ namespace RuppinZombiesDatabase.Controllers
     {
         // GET: api/<QuestionsController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(Models.Question.GetAllQuestions());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
         }
 
         // GET api/<QuestionsController>/5
@@ -24,8 +31,16 @@ namespace RuppinZombiesDatabase.Controllers
 
         // POST api/<QuestionsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] Models.Question q)
         {
+            try
+            {
+                return q.Insert() ? Ok(new {message="Inserted"}) : BadRequest(new { message = "Server Error" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
         }
 
         // PUT api/<QuestionsController>/5

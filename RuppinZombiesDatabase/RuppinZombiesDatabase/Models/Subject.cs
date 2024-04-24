@@ -1,4 +1,6 @@
-﻿namespace RuppinZombiesDatabase.Models
+﻿using RuppinZombiesDatabase.Models.DAL;
+
+namespace RuppinZombiesDatabase.Models
 {
     public class Subject
     {
@@ -7,5 +9,10 @@
 
         public int SubjectID { get => subjectID; set => subjectID = value; }
         public string SubjectName { get => subjectName; set => subjectName = value; }
+        public static List<Subject> GetAllSubjects()
+        {
+            DBservices db = new DBservices();
+            return db.GetAllSubjects();
+        }
     }
 }
