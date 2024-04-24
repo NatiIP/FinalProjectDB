@@ -1,0 +1,8 @@
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.csproj.AssemblyReference.cache
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.AssemblyInfoInputs.cache
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.AssemblyInfo.cs
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.MvcApplicationPartsAssemblyInfo.cs
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.MvcApplicationPartsAssemblyInfo.cache
+C:\Program Files (x86)\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Debug\net6.0\RuppinZombiesDatabase.sourcelink.json
