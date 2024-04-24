@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {}
+    "C:\\Program Files (x86)\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {
+    "C:\\Program Files (x86)\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
         "projectName": "RuppinZombiesDatabase",
-        "projectPath": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
-        "packagesPath": "C:\\Users\\natip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\obj\\",
+        "projectPath": "C:\\Program Files (x86)\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
+        "packagesPath": "C:\\Users\\zindani\\.nuget\\packages\\",
+        "outputPath": "C:\\Program Files (x86)\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\natip\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\zindani\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -77,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
