@@ -88,8 +88,75 @@ namespace RuppinZombiesDatabase.Models.DAL
                     q.Answers.Add(dataReader["answer2"].ToString());
                     q.Answers.Add(dataReader["answer3"].ToString());
                     q.Answers.Add(dataReader["answer4"].ToString());
+                    q.LecturerID = (dataReader["LecturerID"].ToString());
+                    q.Subject = (dataReader["Subject"].ToString());
                     q.CorrectAnswer = Convert.ToInt32(dataReader["correctAnswer"]);
-                    q.SubjectID = Convert.ToInt32(dataReader["SubjectID"]);
+                    q.Date_submitted = Convert.ToDateTime(dataReader["date_submitted"]);
+
+                    questions.Add(q);
+                }
+
+                return questions;
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+        }
+        
+        //---------------------------------------------------------------------------------
+        // Create the SqlCommand to get all of the questions
+        //---------------------------------------------------------------------------------
+        public List<Question> GetUserQuestions(string id)
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+
+            paramDic.Add("@LecturerID", id);
+
+            cmd = CreateCommandWithStoredProcedure("SP_GetLecturerQuestions", con, paramDic); 
+
+            List<Question> questions = new List<Question>();
+
+            try
+            {
+                SqlDataReader dataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dataReader.Read())
+                {
+                    Question q = new Question();
+                    q.Id = Convert.ToInt32(dataReader["QuestionID"]);
+                    q.Content = dataReader["content"].ToString();
+                    q.Answers = new List<string>();
+                    q.Answers.Add(dataReader["answer1"].ToString());
+                    q.Answers.Add(dataReader["answer2"].ToString());
+                    q.Answers.Add(dataReader["answer3"].ToString());
+                    q.Answers.Add(dataReader["answer4"].ToString());
+                    q.CorrectAnswer = Convert.ToInt32(dataReader["correctAnswer"]);
+                    q.Date_submitted = Convert.ToDateTime(dataReader["date_submitted"]);
 
                     questions.Add(q);
                 }
@@ -112,10 +179,176 @@ namespace RuppinZombiesDatabase.Models.DAL
             }
         }
 
+        public PanelUser GetUserInfoById(string id)
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+            paramDic.Add("@UserID", id);
+
+            cmd = CreateCommandWithStoredProcedure("GetUserById", con, paramDic);             // create the command
+
+            try
+            {
+                SqlDataReader dataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                PanelUser u = new();
+
+                if (dataReader.Read())
+                {
+                    u.Email = dataReader["Email"].ToString();
+                    u.Id = dataReader["Id"].ToString();
+                    u.DisplayName = dataReader["DisplayName"].ToString();
+                    u.Password = dataReader["Password"].ToString();
+                    return u;
+                }
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+
+        }
+        //---------------------------------------------------------------------------------
+        // Create the SqlCommand to get question (by id) insights
+        //---------------------------------------------------------------------------------
+        public QuestionInsights GetQuestionInsights(int questionId)
+        {
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+            paramDic.Add("@QuestionID", questionId);
+
+            cmd = CreateCommandWithStoredProcedure("SP_GetQuestionInsights", con, paramDic); // create the command
+
+            try
+            {
+                SqlDataReader dataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                QuestionInsights insights = new QuestionInsights();
+
+                if (dataReader.Read())
+                {
+                    insights.TotalAnswers = Convert.ToInt32(dataReader["TotalAnswers"]);
+                    insights.CorrectAnswers = Convert.ToInt32(dataReader["CorrectAnswers"]);
+                    insights.WrongAnswers = Convert.ToInt32(dataReader["WrongAnswers"]);
+                    insights.PercentageCorrect = Convert.ToDouble(dataReader["PercentageCorrect"]);
+                    insights.PercentageWrong = Convert.ToDouble(dataReader["PercentageWrong"]);
+                    insights.MostCommonWrongAnswer = Convert.ToInt32(dataReader["MostCommonWrongAnswer"]);
+                    insights.UniqueUsers = Convert.ToInt32(dataReader["UniqueUsers"]);
+                }
+
+                return insights;
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+        }
+        //---------------------------------------------------------------------------------
+        // Create the SqlCommand to get total question answers (by id) insights
+        //---------------------------------------------------------------------------------
+        public List<QuestionsAnsInsights> GetUserQuestionsAnsInsights(int lecturerId)
+        {
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+            paramDic.Add("@PanelUserID", lecturerId);
+
+            cmd = CreateCommandWithStoredProcedure("SP_GetUserQuestionAnswersStats", con, paramDic); // create the command
+            List<QuestionsAnsInsights> insightsList = new List<QuestionsAnsInsights>();
+
+            try
+            {
+                SqlDataReader dataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dataReader.Read())
+                {
+                    QuestionsAnsInsights insights = new QuestionsAnsInsights();
+                    insights.TotalAnswers = Convert.ToInt32(dataReader["TotalAnswers"]);
+                    insights.CorrectAnswers = Convert.ToInt32(dataReader["CorrectAnswers"]);
+                    insights.WrongAnswers = Convert.ToInt32(dataReader["WrongAnswers"]);
+                    insights.DateLabel = dataReader["DateLabel"].ToString(); 
+
+                    insightsList.Add(insights);
+                }
+
+                return insightsList;
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+        }
+
         //---------------------------------------------------------------------------------
         // Create the SqlCommand to get all of the subjects
         //---------------------------------------------------------------------------------
-        public List<Subject> GetAllSubjects()
+        public List<string> GetAllSubjects()
         {
 
             SqlConnection con;
@@ -133,7 +366,7 @@ namespace RuppinZombiesDatabase.Models.DAL
 
             cmd = CreateCommandWithStoredProcedure("SP_GetAllSubjects", con, null);             // create the command
 
-            List<Subject> subject = new List<Subject>();
+            List<string> subject = new List<string>();
 
             try
             {
@@ -141,10 +374,7 @@ namespace RuppinZombiesDatabase.Models.DAL
 
                 while (dataReader.Read())
                 {
-                    Subject s = new Subject();
-                    s.SubjectID = Convert.ToInt32(dataReader["SubjectID"]);
-                    s.SubjectName = dataReader["subjectName"].ToString();
-  
+                    string s = dataReader["Subject"].ToString();
                     subject.Add(s);
                 }
 
@@ -234,14 +464,14 @@ namespace RuppinZombiesDatabase.Models.DAL
                 con = connect("myProjDB"); // create the connection
 
                 Dictionary<string, object> paramDic = new Dictionary<string, object>();
-
                 paramDic.Add("@content", q.Content);
                 paramDic.Add("@answer1", q.Answers[0]);
                 paramDic.Add("@answer2", q.Answers[1]);
                 paramDic.Add("@answer3", q.Answers[2]);
                 paramDic.Add("@answer4", q.Answers[3]);
                 paramDic.Add("@correctAnswer", q.CorrectAnswer);
-                paramDic.Add("@SubjectID", q.SubjectID);
+                paramDic.Add("@LecturerID", q.LecturerID);
+                paramDic.Add("@Subject", q.Subject);
 
                 cmd = CreateCommandWithStoredProcedure("SP_InsertQuestion", con, paramDic);  // create the command
 
@@ -271,7 +501,105 @@ namespace RuppinZombiesDatabase.Models.DAL
                 }
             }
         }
+        //--------------------------------------------------------------------------------------------------
+        // This method Deletes a question to the database
+        //--------------------------------------------------------------------------------------------------
+        public int DeleteQuestion(int id)
+        {
 
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+
+            paramDic.Add("@QuestionID", id);
+
+            cmd = CreateCommandWithStoredProcedure("DeleteQuestionById", con, paramDic);  // create the command
+
+
+            try
+            {
+                int numEffected = cmd.ExecuteNonQuery(); // execute the command
+                                                         //int numEffected = Convert.ToInt32(cmd.ExecuteScalar()); // returning the id
+                return (numEffected);
+
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+
+        } 
+        
+        //--------------------------------------------------------------------------------------------------
+        // This method Deletes a question to the database
+        //--------------------------------------------------------------------------------------------------
+        public int DeleteQuestions(string ids)
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+
+            paramDic.Add("@IdList", ids);
+
+            cmd = CreateCommandWithStoredProcedure("DeleteQuestionsByIds", con, paramDic);  // create the command
+
+
+            try
+            {
+                int numEffected = cmd.ExecuteNonQuery(); // execute the command
+                                                         //int numEffected = Convert.ToInt32(cmd.ExecuteScalar()); // returning the id
+                return (numEffected);
+
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+
+        }
         //--------------------------------------------------------------------------------------------------
         // This method Inserts a user to the database and if exists it returns the same user
         //--------------------------------------------------------------------------------------------------
@@ -295,7 +623,7 @@ namespace RuppinZombiesDatabase.Models.DAL
 
                 return result;
             }
-                catch (Exception ex)
+            catch (Exception ex)
             {
                 // Write to log or handle exception appropriately
                 throw ex;
@@ -308,6 +636,7 @@ namespace RuppinZombiesDatabase.Models.DAL
                 }
             }
         }
+
 
         //--------------------------------------------------------------------------------------------------
         // This method Inserts a user's answer to a question
@@ -348,5 +677,164 @@ namespace RuppinZombiesDatabase.Models.DAL
             }
         }
 
+
+        //--------------------------------------------------------------------------------------------------
+        // \\\\\\\\\\\\\\\\\\\\-----------------------PANEL USER-----------------------------\\\\\\\\\\\\\\\
+        //--------------------------------------------------------------------------------------------------
+       
+        //--------------------------------------------------------------------------------------------------
+        // This method Inserts a panel user to the database and if exists it returns the same user
+        //--------------------------------------------------------------------------------------------------
+        public int RegisterPanelUser(PanelUser user)
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+
+            paramDic.Add("@Email", user.Email);
+            paramDic.Add("@UserID", user.Id);
+            paramDic.Add("@Password", user.Password);
+            paramDic.Add("@DisplayName", user.DisplayName);
+
+            cmd = CreateCommandWithStoredProcedure("SP_RegisterPanelUser", con, paramDic);  // create the command
+
+            try
+            {
+                int numEffected = cmd.ExecuteNonQuery(); // execute the command
+                //int numEffected = Convert.ToInt32(cmd.ExecuteScalar()); // returning the id
+                return (numEffected);
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+        }
+        public string LogIn(string email, string password)
+        {
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader reader;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+                Dictionary<string, object> paramDic = new Dictionary<string, object>();
+                paramDic.Add("@Email", email);
+                paramDic.Add("@Password", password);
+
+                cmd = CreateCommandWithStoredProcedure("sp_LoginUser", con, paramDic);  // create the command
+                reader = cmd.ExecuteReader(); // execute the command and get the reader
+
+                if (reader.HasRows)
+                {
+                    reader.Read(); // read the first row
+
+                    string userId = reader["UserId"].ToString(); // read the 'UserId' column
+                    string status = reader["Status"].ToString(); // read the 'Status' column
+
+                    if (status == "Pending")
+                    {
+                        return "Pending"; // Return "Pending" if user's status is "Pending"
+                    }
+                    else if (status == "Denied")
+                    {
+                        return "Denied"; // Return "Denied" if user's status is "Denied"
+                    }
+                    else
+                    {
+                        return userId; // return the UserId as string
+                    }
+                }
+                else
+                {
+                    return "Invalid email or password"; // Return "Invalid email or password" if login fails
+                }
+            }
+            catch (Exception ex)
+            {
+                // write to log or handle the exception
+                throw (ex);
+            }
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+        }
+
+
+
+        public int EditDisplayName(PanelUser userData)
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            Dictionary<string, object> paramDic = new Dictionary<string, object>();
+
+            paramDic.Add("@Id", userData.Id);
+            paramDic.Add("@DisplayName", userData.DisplayName);
+
+            cmd = CreateCommandWithStoredProcedure("USER_EditProfile", con, paramDic);  // create the command
+
+
+            try
+            {
+                int numEffected = cmd.ExecuteNonQuery(); // execute the command
+                                                         //int numEffected = Convert.ToInt32(cmd.ExecuteScalar()); // returning the id
+                return (numEffected);
+
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+
+        }
     }
 }

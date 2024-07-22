@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {}
+    "C:\\Users\\Nevo Avisar\\WoofrServer\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {
+    "C:\\Users\\Nevo Avisar\\WoofrServer\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
+        "projectUniqueName": "C:\\Users\\Nevo Avisar\\WoofrServer\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
         "projectName": "RuppinZombiesDatabase",
-        "projectPath": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
-        "packagesPath": "C:\\Users\\natip\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\natip\\Documents\\Unreal Engine Projects\\GitHub\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\obj\\",
+        "projectPath": "C:\\Users\\Nevo Avisar\\WoofrServer\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\RuppinZombiesDatabase.csproj",
+        "packagesPath": "C:\\Users\\Nevo Avisar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nevo Avisar\\WoofrServer\\FinalProjectDB\\RuppinZombiesDatabase\\RuppinZombiesDatabase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\natip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nevo Avisar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,11 +38,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -64,8 +59,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -77,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

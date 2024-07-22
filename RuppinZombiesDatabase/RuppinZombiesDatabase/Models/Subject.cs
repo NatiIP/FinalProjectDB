@@ -9,7 +9,7 @@ namespace RuppinZombiesDatabase.Models
 
         public int SubjectID { get => subjectID; set => subjectID = value; }
         public string SubjectName { get => subjectName; set => subjectName = value; }
-        public static List<Subject> GetAllSubjects()
+        public static List<string> GetAllSubjects()
         {
             DBservices db = new DBservices();
             return db.GetAllSubjects();

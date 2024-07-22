@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RuppinZombiesDatabase.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,16 +23,48 @@ namespace RuppinZombiesDatabase.Controllers
             }
         }
 
-        // GET api/<QuestionsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(string id)
         {
-            return "value";
+            try
+            {
+                return Ok(Models.Question.GetUserQuestions(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
+        }
+
+        [HttpGet("insights/{questionId}")]
+        public IActionResult GetQuestionInsights(int questionId)
+        {
+            try
+            {
+                return Ok(QuestionInsights.GetUserQuestionInsight(questionId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
+        }
+        
+        [HttpGet("widgetInsights/{lecturerId}")]
+        public IActionResult GetAnswersInsights(int lecturerId)
+        {
+            try
+            {
+                return Ok(QuestionsAnsInsights.GetUserQuestionsAnsInsights(lecturerId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
         }
 
         // POST api/<QuestionsController>
         [HttpPost]
-        public IActionResult Post([FromBody] Models.Question q)
+        public IActionResult Post([FromBody] Question q)
         {
             try
             {
@@ -51,8 +84,31 @@ namespace RuppinZombiesDatabase.Controllers
 
         // DELETE api/<QuestionsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                return Question.DeleteQuestion(id) ? Ok(new { message = "deleted" }) : BadRequest(new { message = "Server Error" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
+        }
+        
+        // DELETE api/<QuestionsController>/5
+        [HttpDelete]
+        [Route("DeleteSelected/{ids}")]
+        public IActionResult DeleteSelected(string ids)
+        {
+            try
+            {
+                return Question.DeleteQuestions(ids) ? Ok(new { message = "deleted" }) : BadRequest(new { message = "Server Error" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Server Error " + ex.Message });
+            }
         }
     }
 }

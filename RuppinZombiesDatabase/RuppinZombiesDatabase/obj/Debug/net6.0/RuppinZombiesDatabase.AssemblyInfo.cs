@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuppinZombiesDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae0436252a1e64f79dc2cba5cc7e1a583b0de90b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuppinZombiesDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuppinZombiesDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
