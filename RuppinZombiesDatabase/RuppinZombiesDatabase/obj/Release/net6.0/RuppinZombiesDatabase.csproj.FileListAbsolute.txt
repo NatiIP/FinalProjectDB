@@ -31,3 +31,42 @@ C:\Users\Nevo Avisar\WoofrServer\FinalProjectDB\RuppinZombiesDatabase\RuppinZomb
 C:\Users\Nevo Avisar\WoofrServer\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.pdb
 C:\Users\Nevo Avisar\WoofrServer\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.genruntimeconfig.cache
 C:\Users\Nevo Avisar\WoofrServer\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\ref\RuppinZombiesDatabase.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\appsettings.Development.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\appsettings.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\RuppinZombiesDatabase.exe
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\RuppinZombiesDatabase.deps.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\RuppinZombiesDatabase.runtimeconfig.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\RuppinZombiesDatabase.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\RuppinZombiesDatabase.pdb
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\Microsoft.OpenApi.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\System.Data.SqlClient.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\bin\Release\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.csproj.AssemblyReference.cache
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.AssemblyInfoInputs.cache
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.AssemblyInfo.cs
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.csproj.CoreCompileInputs.cache
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.sourcelink.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets.build.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets.development.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets\msbuild.RuppinZombiesDatabase.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets\msbuild.build.RuppinZombiesDatabase.props
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets\msbuild.buildMultiTargeting.RuppinZombiesDatabase.props
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets\msbuild.buildTransitive.RuppinZombiesDatabase.props
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\staticwebassets.pack.json
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\scopedcss\bundle\RuppinZombiesDatabase.styles.css
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZo.89AC814F.Up2Date
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\refint\RuppinZombiesDatabase.dll
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.pdb
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\RuppinZombiesDatabase.genruntimeconfig.cache
+C:\Users\natip\Documents\Unreal Engine Projects\GitHub\FinalProjectDB\RuppinZombiesDatabase\RuppinZombiesDatabase\obj\Release\net6.0\ref\RuppinZombiesDatabase.dll
