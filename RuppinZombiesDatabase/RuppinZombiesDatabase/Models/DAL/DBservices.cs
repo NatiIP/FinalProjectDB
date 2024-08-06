@@ -156,6 +156,7 @@ namespace RuppinZombiesDatabase.Models.DAL
                     q.Answers.Add(dataReader["answer3"].ToString());
                     q.Answers.Add(dataReader["answer4"].ToString());
                     q.CorrectAnswer = Convert.ToInt32(dataReader["correctAnswer"]);
+                    q.Subject = dataReader["Subject"].ToString();
                     q.Date_submitted = Convert.ToDateTime(dataReader["date_submitted"]);
 
                     questions.Add(q);
@@ -216,6 +217,63 @@ namespace RuppinZombiesDatabase.Models.DAL
                 }
                 return null;
 
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            finally
+            {
+                if (con != null)
+                {
+                    // close the db connection
+                    con.Close();
+                }
+            }
+
+        }
+        //---------------------------------------------------------------------------------
+        // Create the SqlCommand to get all panel users for admin panel
+        //---------------------------------------------------------------------------------
+        public object GetPanelUsers()
+        {
+
+            SqlConnection con;
+            SqlCommand cmd;
+
+            try
+            {
+                con = connect("myProjDB"); // create the connection
+            }
+            catch (Exception ex)
+            {
+                // write to log
+                throw (ex);
+            }
+
+            cmd = CreateCommandWithStoredProcedure("SP_GetAllPanelUsers", con, null);             // create the command
+           
+            List<object> panelUsers = new List<object>();
+
+            try
+            {
+                SqlDataReader dataReader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
+                while (dataReader.Read())
+                {
+                    object u = new
+                    {
+                        status = dataReader["Status"].ToString(),
+                        email = dataReader["Email"].ToString(),
+                        displayName = dataReader["DisplayName"].ToString(),
+                        totalQuestions = Convert.ToInt32(dataReader["TotalQuestions"])
+                    };
+                    panelUsers.Add(u);
+                }
+
+                return panelUsers;
             }
             catch (Exception ex)
             {

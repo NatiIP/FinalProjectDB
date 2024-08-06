@@ -11,9 +11,16 @@ namespace RuppinZombiesDatabase.Controllers
     {
         // GET: api/<PanelUsersController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public ActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                return Ok(Models.PanelUser.GetPanelUsers());
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
         }
 
         // GET api/<PanelUsersController>/5

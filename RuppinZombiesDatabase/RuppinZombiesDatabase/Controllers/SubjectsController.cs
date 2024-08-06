@@ -14,7 +14,7 @@ namespace RuppinZombiesDatabase.Controllers
         {
             try
             {
-                return Ok(Models.Subject.GetAllSubjects());
+                return Ok(Models.Question.GetAllSubjects());
             }
             catch (Exception ex)
             {

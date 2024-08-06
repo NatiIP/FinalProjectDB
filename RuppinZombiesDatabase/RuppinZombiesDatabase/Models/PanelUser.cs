@@ -37,6 +37,13 @@ namespace RuppinZombiesDatabase.Models
             if (userData == null) throw new Exception("Error getting user info");
             else return userData;
         }
+         static public object GetPanelUsers()
+        {
+            DBservices dbs = new DBservices();
+            object userData = dbs.GetPanelUsers();
+            if (userData == null) throw new Exception("Error getting users info");
+            else return userData;
+        }
 
     }
 }
